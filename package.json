@@ -1,0 +1,20 @@
+{
+  "name": "hallpass",
+  "version": "0.0.1",
+  "description": "the all in one hallway management software",
+  "main": "src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muscara-Software-Solutions/hallpass.git"
+  },
+  "author": "Muscara Software Solutions",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Muscara-Software-Solutions/hallpass/issues"
+  },
+  "homepage": "https://github.com/Muscara-Software-Solutions/hallpass#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
