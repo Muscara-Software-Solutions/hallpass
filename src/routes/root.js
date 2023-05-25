@@ -1,7 +1,8 @@
 const express = require('express');
+const { checkPerm } = require('./util/auth');
 const router = express.Router();
 
-router.get(`/`, async(req, res) => {
+router.get(`/`, checkPerm, async(req, res) => {
   res.render(`index.ejs`);
 });
 
