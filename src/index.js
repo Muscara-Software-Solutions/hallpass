@@ -8,7 +8,7 @@ const root = require('./routes/root');
 // Express configuration
 app.set('views', require('path').join(__dirname, 'views'))
 app.set('view engine', 'ejs');
-app.use('/public', express.static(require('path').join(__dirname, 'public')));
+app.use('/', express.static(require('path').join(__dirname, 'public')));
 
 // Route Initialization
 app.use('/users', user);
