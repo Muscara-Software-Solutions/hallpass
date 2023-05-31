@@ -8,6 +8,21 @@ datasource db {
 }
 
 model User {
-  id    Int @id @default(autoincrement())
-  email String @unique
+  id        String    @id @unique @default(uuid()) @map("user_id")
+  email     String    @unique
+  role      String    @map("role")
+  createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(0)
+  updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(0)
+
+  @@map("user")
+}
+
+model School {
+  id        String    @id @unique @default(uuid()) @map("school_id")
+  name      String
+  owner     String?   @map("user_id")
+  createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(0)
+  updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(0)
+
+  @@map("school")
 }
