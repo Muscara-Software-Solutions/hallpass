@@ -4,6 +4,7 @@ const app = express();
 // Import routes
 const user = require('./routes/user');
 const root = require('./routes/root');
+const auth = require('./routes/auth');
 
 // Express configuration
 app.set('views', require('path').join(__dirname, 'views'))
@@ -12,6 +13,7 @@ app.use('/', express.static(require('path').join(__dirname, 'public')));
 
 // Route Initialization
 app.use('/users', user);
+app.use('/login', auth);
 app.use('/', root);
 
 // Server Initialization
