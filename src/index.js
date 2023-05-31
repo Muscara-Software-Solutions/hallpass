@@ -9,12 +9,13 @@ const auth = require('./routes/auth');
 // Express configuration
 app.set('views', require('path').join(__dirname, 'views'))
 app.set('view engine', 'ejs');
+app.set('trust proxy', 1);
 app.use('/', express.static(require('path').join(__dirname, 'public')));
 app.use(require('express-session')(
   { 
     secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    cookie: { maxAge: 1000 * 60 * 60 * 24, secure: true },
     resave: false
   }
 ));
