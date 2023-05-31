@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 async function deleteUser(id) {
   return await prisma.user.delete({
-    where: { id }
+    where: { id: parseInt(id) }
   });
 }
 
