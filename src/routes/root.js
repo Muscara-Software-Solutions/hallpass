@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const google = require('googleapis').google;
-const config = require('../../creds.json');
 const { getUserEmail } = require('../orm/read/user');
 const { createUser } = require('../orm/create/user');
 const OAuth2 = google.auth.OAuth2;
@@ -13,9 +12,9 @@ router.get('/auth/callback', async (req, res) => {
   if (req.query.error) return res.send({ status: 500, error: req.query.error });
 
   let authClient = new OAuth2(
-    config.web.client_id,
-    config.web.client_secret,
-    config.web.redirect_uris[0]
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    JSON.parse(process.env.REDIRECT_URIS)[0]
   );
 
   authClient.getToken(req.query.code, (err, token) => {

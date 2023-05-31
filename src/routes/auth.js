@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const google = require('googleapis').google;
-const config = require('../../creds.json');
 const OAuth2 = google.auth.OAuth2;
 
 router.get(`/`, async(req, res) => {
@@ -11,14 +10,14 @@ router.get(`/`, async(req, res) => {
     error,
     generateAuthURL: () => {
       let authClient = new OAuth2(
-        config.web.client_id,
-        config.web.client_secret,
-        config.web.redirect_uris[0]
+        process.env.CLIENT_ID,
+        process.env.CLIENT_SECRET,
+        JSON.parse(process.env.REDIRECT_URIS)[0]
       );
 
       return authClient.generateAuthUrl({ 
         access_type: 'offline',
-        scope: config.scopes
+        scope: ["https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/user.emails.read"]
       });
     }
   })
