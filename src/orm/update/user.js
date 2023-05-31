@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 async function updateUser(id, updatedUser) {
   return await prisma.user.update({
-    where: { id: parseInt(id) },
+    where: { id },
     data: updatedUser
   });
 }

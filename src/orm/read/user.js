@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 async function getUser(id) {
   return await prisma.user.findFirst({
-    where: { id: parseInt(id) }
+    where: { id }
   });
 }
 
