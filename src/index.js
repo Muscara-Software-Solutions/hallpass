@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const MemoryStore = require('memorystore')(require('express-session'));
 
 // Import routes
 const user = require('./routes/user');
@@ -16,7 +17,10 @@ app.use(require('express-session')(
     secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 24, secure: true },
-    resave: false
+    resave: false,
+    store: new MemoryStore({
+      checkPeriod: 1000 * 60 * 60 * 24
+    })
   }
 ));
 app.use(express.json());
