@@ -6,46 +6,80 @@ const { getUserEmail } = require('../orm/read/user');
 const { createUser } = require('../orm/create/user');
 const OAuth2 = google.auth.OAuth2;
 
-router.get(`/`, async (req, res) => res.render(`index.ejs`));
+router.get(`/`, 
+  async (req, res) => {
+    let login = false;
+    if(req.session.userid) login = true;
 
-router.get('/auth/callback', async (req, res) => {
-  if (req.query.error) return res.send({ status: 500, error: req.query.error });
+    res.render(`index.ejs`, { login });
+  }
+);
 
-  let authClient = new OAuth2(
-    process.env.CLIENT_ID,
-    process.env.CLIENT_SECRET,
-    JSON.parse(process.env.REDIRECT_URIS)[0]
-  );
+router.get(`/logout`,
+  async(req, res) => {
+    req.session.destroy();
+    res.redirect(`/`);
+  }
+);
 
-  authClient.getToken(req.query.code, (err, token) => {
-    if (err) {
-      res.send({ status: 500, ...err.response.data });
-    }
+router.get('/auth/callback',
+  async(req, res) => {
+    if (req.query.error) return res.send({ status: 500, error: req.query.error });
 
-    if(token !== null) {
-      authClient.credentials = token;
-      let service = google.people({ version: 'v1', auth: authClient });
-      service.people.get({
-        "resourceName": "people/me",
-        "requestMask.includeField": "person.emailAddresses"
-      }).then(async (data) => {
-        let response = await getUserEmail(data.data.emailAddresses[0].value);
-        if (response === null) {
-          let newUser = {
-            email: data.data.emailAddresses[0].value,
-            role: 'default',
+    let authClient = new OAuth2(
+      process.env.CLIENT_ID,
+      process.env.CLIENT_SECRET,
+      JSON.parse(process.env.REDIRECT_URIS)[0]
+    );
+
+    authClient.getToken(req.query.code, (err, token) => {
+      if (err) {
+        res.send({ status: 500, ...err.response.data });
+      }
+
+      if(token !== null) {
+        authClient.credentials = token;
+        let service = google.people({ version: 'v1', auth: authClient });
+        service.people.get({
+          "resourceName": "people/me",
+          "requestMask.includeField": "person.emailAddresses"
+        }).then(async (data) => {
+          let response = await getUserEmail(data.data.emailAddresses[0].value);
+          if (response === null) {
+            let newUser = {
+              email: data.data.emailAddresses[0].value,
+              role: 'default',
+            }
+    
+            let user = await createUser(newUser);
+            req.session.regenerate((err) => {
+              if(err) res.send({ status: 500, error: err });
+
+              req.session.userid = user;
+
+              req.session.save((err) => {
+                if(err) res.send({ status: 500, error: err });
+
+                res.redirect(`/`);
+              })
+            });
+          } else {
+            req.session.regenerate((err) => {
+              if(err) res.send({ status: 500, error: err });
+
+              req.session.userid = response;
+
+              req.session.save((err) => {
+                if(err) res.send({ status: 500, error: err });
+
+                res.redirect(`/`);
+              })
+            });
           }
-  
-          let user = await createUser(newUser);
-          res.send(user);
-        } else {
-          // set user session
-          res.send(response);
-        }
-      });
-    }
-  });
-
-});
+        });
+      }
+    });
+  }
+);
 
 module.exports = router;

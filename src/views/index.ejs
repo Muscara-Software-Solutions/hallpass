@@ -76,7 +76,11 @@
             <li> <a href="#demos" uk-scroll> Demo</a></li>
           </ul>
         </nav>
-        <a href="#pricing" class="bg-black font-medium px-4 py-1.5 rounded-full text-sm text-white">Pricing</a>
+        <% if(login) { %>
+          <a href="/dashboard" class="bg-black font-medium px-4 py-1.5 rounded-full text-sm text-white">Dashboard</a>
+        <% } else { %>
+          <a href="#pricing" class="bg-black font-medium px-4 py-1.5 rounded-full text-sm text-white">Pricing</a>
+        <% } %> 
        </div>
       </div>
     </div>
@@ -92,7 +96,11 @@
           </p>
 
           <div class="flex space-x-2 items-center justify-center">
-            <a href="#pricing" class="text-white font-semibold px-6 rounded-md bg-black py-2.5 mt-8 inline-block"> View Pricing</a>
+            <% if(login) { %>
+              <a href="/dashboard" class="text-white font-semibold px-6 rounded-md bg-black py-2.5 mt-8 inline-block">Dashboard</a>
+            <% } else { %>
+              <a href="#pricing" class="text-white font-semibold px-6 rounded-md bg-black py-2.5 mt-8 inline-block"> View Pricing</a>
+            <% } %>             
           </div>
 
         </div>
