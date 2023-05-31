@@ -19,10 +19,43 @@ model User {
 
 model School {
   id        String    @id @unique @default(uuid()) @map("school_id")
+  active    Boolean   @default(true)
+  day       Int       @default(2)
+  sem       Int       @default(36)
   name      String
   owner     String?   @map("user_id")
   createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(0)
   updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(0)
+  Student   Student[]
 
   @@map("school")
+}
+
+model Student {
+  id         String    @id @unique @default(uuid()) @map("student_id")
+  schoolId   String?   @map("school_id")
+  firstName  String
+  lastName   String
+  day        Int       @default(2)
+  sem        Int       @default(36)
+  identifier String
+  createdAt  DateTime? @default(now()) @map("created_at") @db.Timestamp(0)
+  updatedAt  DateTime? @updatedAt @map("updated_at") @db.Timestamp(0)
+
+  school School? @relation(fields: [schoolId], references: [id])
+  Pass   Pass[]
+
+  @@map("student")
+}
+
+model Pass {
+  id          String    @id @unique @default(uuid()) @map("pass_id")
+  studentId   String?   @map("student_id")
+  destination String
+  createdAt   DateTime? @default(now()) @map("created_at") @db.Timestamp(0)
+  updatedAt   DateTime? @updatedAt @map("updated_at") @db.Timestamp(0)
+
+  student Student? @relation(fields: [studentId], references: [id])
+
+  @@map("pass")
 }
