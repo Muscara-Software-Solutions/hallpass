@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run prisma:form && npm run prisma:gen && npm run server:start",
     "server:start": "node .",
-    "prisma:gen": "sudo npx prisma generate",
-    "prisma:form": "sudo npx prisma format"
+    "prisma:gen": "sudo prisma generate",
+    "prisma:form": "sudo prisma format"
   },
   "repository": {
     "type": "git",
