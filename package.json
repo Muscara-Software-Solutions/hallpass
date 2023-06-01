@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "description": "the all in one hallway management software",
   "main": "src/index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "npm run prisma:form && npm run prisma:gen && npm run server:start",
+    "server:start": "node .",
+    "prisma:gen": "sudo npx prisma generate",
+    "prisma:form": "sudo npx prisma format"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Muscara-Software-Solutions/hallpass.git"
@@ -20,7 +25,8 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "googleapis": "^118.0.0",
-    "memorystore": "^1.6.7"
+    "memorystore": "^1.6.7",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@prisma/client": "^4.15.0",
