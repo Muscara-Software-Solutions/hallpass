@@ -1,6 +1,6 @@
 const express = require('express');
+const { getUsers, getUser } = require('../../orm/read/user');
 const router = express.Router();
-const { getUsers, getUser } = require('../orm/read/user');
 
 router.get('/', async(req, res) => {
   res.send({ status: 200, users: await getUsers() });
