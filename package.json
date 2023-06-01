@@ -4,7 +4,8 @@
   "description": "the all in one hallway management software",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm run prisma:form && npm run prisma:gen && npm run server:start",
+    "start": "node .",
+    "dev:start": "npm run prisma:form && npm run prisma:gen && npm run server:start",
     "server:start": "node .",
     "prisma:gen": "sudo prisma generate",
     "prisma:form": "sudo prisma format"
