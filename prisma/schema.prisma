@@ -7,12 +7,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model API_Key {
+  id        String    @id @unique @default(uuid()) @map("api_key_id")
+  key       String    @unique @default(uuid()) @map("api_key")
+  userId    String?   @map("user_id")
+  createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(0)
+  updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(0)
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@map("api_key")
+}
+
 model User {
   id        String    @id @unique @default(uuid()) @map("user_id")
   email     String    @unique
   role      String    @map("role")
   createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(0)
   updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(0)
+  API_Key   API_Key[]
+  School    School[]
 
   @@map("user")
 }
@@ -23,10 +37,12 @@ model School {
   day       Int       @default(2)
   sem       Int       @default(36)
   name      String
-  owner     String?   @map("user_id")
+  ownerId   String?   @map("user_id")
   createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(0)
   updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(0)
-  Student   Student[]
+
+  owner   User?     @relation(fields: [ownerId], references: [id])
+  Student Student[]
 
   @@map("school")
 }
