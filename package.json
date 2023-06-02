@@ -2,7 +2,7 @@
   "name": "hallpass",
   "version": "0.0.1",
   "description": "the all in one hallway management software",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node .",
     "dev:start": "npm run prisma:form && npm run prisma:gen && npm run server:start",
