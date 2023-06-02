@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hallpass</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hallpass - All in one hallway management software">
+    <link rel="stylesheet" href="/assets/css/icons.css">
+    <link rel="stylesheet" href="/assets/css/uikit.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+    <style>
+      html,
+      body {
+        background: white !important
+      }
+    
+      .container {
+        max-width: 1000px;
+      }
+      .delimiter-bottom,
+      .delimiter-top {
+          position: relative
+      }
+      
+      .delimiter-top:before {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          display: block;
+          width: 80%;
+          height: 1px;
+          margin-left: -40%;
+          content: '';
+          background: radial-gradient(ellipse at center, rgba(0, 0, 0, .2) 0, rgba(255, 255, 255, 0) 75%)
+      }
+      
+      .delimiter-bottom:after {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          display: block;
+          width: 80%;
+          height: 1px;
+          margin-left: -40%;
+          content: '';
+          background: radial-gradient(ellipse at center, rgba(0, 0, 0, .2) 0, rgba(255, 255, 255, 0) 75%)
+      }
+      
+      @media (min-width: 960px) {
+        .view-on-mobile{  display: none; }
+      }
+      @media (max-width: 960px) {
+        .hide-on-mobile{  display: none; }
+      }
+    </style>
+</head> 
+<body>
+ 
+  <div class="hero">
+
+    <!--  Header -->
+    <div class="container mx-auto">
+      <div class="flex items-center justify-between mx-auto py-5">
+        <a href="#" class="flex font-semibold items-center lg:text-2xl text-xl text-black">
+          <ion-icon name="lock-closed-outline" class="mr-2 lg:text-3xl text-xl"></ion-icon>
+          Hallpass
+        </a>
+       <div class="flex items-center space-x-4">
+        <nav>
+          <ul class="md:flex items-center space-x-3 hidden">
+            <li> <a href="https://blog.hallpass.gg"> Blog</a></li>
+            <li> <a href="#overview" uk-scroll> Overview</a></li>
+            <li> <a href="#features" uk-scroll> Features</a></li>
+            <li> <a href="#demos" uk-scroll> Demo</a></li>
+          </ul>
+        </nav>
+        <% if(login) { %>
+          <a href="/dashboard" class="bg-black font-medium px-4 py-1.5 rounded-full text-sm text-white">Dashboard</a>
+        <% } else { %>
+          <a href="#pricing" class="bg-black font-medium px-4 py-1.5 rounded-full text-sm text-white">Pricing</a>
+        <% } %> 
+       </div>
+      </div>
+    </div>
+   
+    <div class="md:mt-20 mt-12 relative" id="overview">
+      <div class="absolute bg-gradient-to-b bottom-0 from-transparent h-20 left-0 to-gray-50 w-full"></div>
+      <div class="container mx-auto">
+  
+        <div class="md:mx-12 text-center">
+          <h1 class="lg:text-4xl text-2xl font-extrabold"> Modern Hallway Management </h1>
+          <p class="mt-3 mx-auto max-w-lg text-base">  
+            The future of hallway management, built by educators, for educators.
+          </p>
+
+          <div class="flex space-x-2 items-center justify-center">
+            <% if(login) { %>
+              <a href="/dashboard" class="text-white font-semibold px-6 rounded-md bg-black py-2.5 mt-8 inline-block">Dashboard</a>
+            <% } else { %>
+              <a href="#pricing" class="text-white font-semibold px-6 rounded-md bg-black py-2.5 mt-8 inline-block"> View Pricing</a>
+            <% } %>             
+          </div>
+
+        </div>
+
+
+        <img src="/assets/images/logo.png" alt="" class="w-full mt-16 rounded-lg">
+      </div>
+    </div>
+
+  </div>
+
+  <!--  features -->
+  <div class="lg:py-24 py-12 delimiter-top" id="features">
+    <div class="container">
+
+      <h1 class="lg:text-5xl text-xl lg:leading-snug font-bold"><span class="text-blue-500">Hallpass</span> is built to match <span class="text-red-500">your policy</span> offering <span class="text-yellow-500">comprehensive</span> and <span class="text-green-500">customizable</span> features</h1>
+
+      <div class="grid lg:grid-cols-2 lg:gap-10 lg:mt-16 mt-8 gap-4">
+        <div>
+          <h1 class="md:text-2xl text-base font-semibold mb-2">Modular Customization</h1>
+          <p class="lg:text-lg">Extremely customized features can be enabled/disabled anytime, and anywhere.</p>
+        </div>
+
+        <div>
+          <h1 class="md:text-2xl text-base font-semibold mb-2">Seamless Integration</h1>
+          <p class="lg:text-lg">Complete integration with existing Student Information Systems like Infinite Campus or Google IAM.</p>
+        </div>
+        <div>
+          <h1 class="md:text-2xl text-base font-semibold mb-2">Proper Restrictions</h1>
+          <p class="lg:text-lg">Control your students with daily, semester, yearly, and location based passed limits.</p>
+        </div>
+
+        <div>
+          <h1 class="md:text-2xl text-base font-semibold mb-2">Increased Safety</h1>
+          <p class="lg:text-lg">Built in Verkada Vape Detection and Custom blacklists preventing two or more students from leaving at the same time.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--  demos -->
+  <div class="lg:py-24 py-12 delimiter-top" id="demos">
+    <div class="container">
+
+      <div class="p-1 text-base text-yellow-500 bg-yellow-100 transform -rotate-3 px-2 inline-block rounded-md mb-3"> Preview</div>
+      <div class="lg:text-4xl text-xl leading-snug font-bold text-black mb-6 capitalize"> Explore our demos </div>
+
+      <p class="text-lg max-w-4xl mb-8 lg:block hidden lg:leading-8">Whether your institution is K-12 or Higher Education, we offer a unique and modern demo to see if Hallpass matches your needs.</p>
+
+      <div class="relative -mt-3" uk-slider="finite: true">
+                
+        <div class="uk-slider-container px-1 py-3">
+            <ul class="uk-slider-items uk-child-width-1-2@m uk-grid">
+    
+              <li>
+      
+                <a href="default/index.html">
+                  <div class="w-full bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                    <img src="/assets/images/logo.png" alt="">
+                  </div>
+                </a>
+                <div class="mt-3">
+                  <p class="text-lg font-medium text-gray-900">Administrator View </p>
+                </div>
+      
+              </li>
+      
+              <li>
+      
+                <a href="horizontal/index.html">
+                  <div class="w-full bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                    <img src="/assets/images/logo.png" alt="">
+                  </div>
+                </a>
+                <div class="mt-5">
+                  <p class="text-lg font-medium text-gray-900">Student View</p>
+                </div>
+      
+              </li>
+            </ul>
+        </div>
+        
+        <a class="absolute bg-white text-2xl text-blue-500 hover:bg-blue-600 hover:text-white top-1/3 md:flex items-center justify-center -right-6 rounded-full shadow-md z-10 w-12 h-12 hidden" href="#" uk-slider-item="next"> <i class="icon-feather-arrow-right"></i></a>
+        <a class="absolute bg-white text-2xl text-blue-500 hover:bg-blue-600 hover:text-white top-1/3 md:flex items-center justify-center -left-4 rounded-full shadow-md z-10 w-12 h-12 hidden" href="#" uk-slider-item="previous"> <i class="icon-feather-arrow-left"></i></a>
+    
+    </div>
+    </div>
+  </div>
+
+  <div class="lg:py-24 py-12 delimiter-top" id="pricing"> 
+    <div class="container">
+      <div class="flex flex-col items-center lg:py-6 text-center">
+          <h3 class="mt-2 mb-2.5 font-semibold text-2xl lg:text-3xl">Pricing Plans </h3>
+          <p> Our plans are simple, select whawt features best suit your needs, and begin today.</p>
+          <ul class="bg-gray-100 font-medium inline-flex my-4 px-1.5 py-2.5 pricing-swicher rounded-md space-x-1 mt-6" 
+          uk-switcher="connect: .change-plan ;animation: uk-animation-slide-top-medium, uk-animation-scale-up">
+              <li class="uk-active"><a class="py-2 px-8 rounded-md whitespace-nowrap" href="#">Monthly billing</a></li>
+              <li class=""><a class="py-2 px-8 rounded-md whitespace-nowrap relative" href="#">
+                  <span class="-right-4 -top-4 absolute bg-yellow-100 border border-yellow-200 font-semibold hidden md:block px-1.5 py-0.5 rotate-3 rounded-full shadow-sm text-xs text-yellow-400 transform"> 30%</span> Yearly billing</a>
+              </li>
+          </ul>
+      </div>
+       
+      <div class="grid lg:grid-cols-3 lg:mt-20 mt-4 lg:gap-y-0 gap-y-5">
+
+          <!-- card-1 -->
+          <div class="bg-white p-8 rounded-l-lg shadow space-y-2">
+
+              <h4 class="font-semibold text-lg sm:text-2xl text-purple-900"> Basic Plan</h4>
+
+              <div class="bg-gray-100 p-3 rounded space-x-1.5"> 
+                  <ul class="uk-switcher change-plan">
+                      <li class="flex items-end justify-center">
+                          <div class="font-semibold text-3xl">$0.06</div>
+                          <div class="font-medium text-lg uk-animation-slide-left-small"> / Student </div>
+                      </li>
+                      <li class="flex items-end justify-center">
+                          <div class="font-semibold text-3xl">$0.50</div>
+                          <div class="font-medium text-lg"> / Student </div>
+                      </li>
+                  </ul>  
+              </div>
+
+              <ul class="py-3 space-y-1 text-gray-500">
+                  <li>Pass Restrictions</li>
+                  <li>0-500 Students</li>
+                  <li>SIS Integration</li>
+              </ul>
+              <a href="#" class="block border p-3 rounded-md space-x-1.5 text-center text-purple-900 text-sm">Get Started </a>
+          </div>
+           
+          <!-- card-2 -->
+          <div class="bg-white pt-16 lg:pt-8 p-8 shadow-xl space-y-2 relative -my-3 rounded-b-md"> 
+
+              <div class="lg:-top-10 top-0 absolute bg-blue-600 left-0 p-3 rounded-t-md text-center text-white w-full font-semibold"> Recommended </div>
+
+              <h4 class="font-semibold text-lg sm:text-2xl text-purple-900">Standard Plan</h4>
+
+              <div class="bg-gray-100 p-3 rounded space-x-1.5"> 
+                  <ul class="uk-switcher change-plan">
+                      <li class="flex items-end justify-center">
+                          <div class="font-semibold text-3xl">$0.16</div>
+                          <div class="font-medium text-lg uk-animation-slide-left-small"> / Student </div>
+                      </li>
+                      <li class="flex items-end justify-center">
+                          <div class="font-semibold text-3xl">$1.50</div>
+                          <div class="font-medium text-lg"> / Student </div>
+                      </li>
+                  </ul>  
+              </div>
+
+              <ul class="py-3 space-y-1 text-gray-500">
+                  <li>Features of Basic Plan</li>
+                  <li>500-1000 Students</li>
+                  <li>Student Blacklists</li>
+                  <li>Frequent Flyer Lists</li>
+              </ul>
+              <br>
+              <a href="#" class="bg-blue-600 block p-3 rounded-md space-x-1.5 text-center text-sm text-white">Get Started </a>
+
+          </div>
+
+          <!-- card-3 -->
+          <div class="bg-white p-8 rounded-r-lg shadow space-y-2">
+
+
+              <h4 class="font-semibold text-lg sm:text-2xl text-purple-900"> Premium Plan</h4>
+
+              <div class="bg-gray-100 p-3 rounded space-x-1.5"> 
+                  <ul class="uk-switcher change-plan">
+                      <li class="flex items-end justify-center">
+                          <div class="font-semibold text-3xl">$0.25</div>
+                          <div class="font-medium text-lg uk-animation-slide-left-small"> / Student </div>
+                      </li>
+                      <li class="flex items-end justify-center">
+                          <div class="font-semibold text-3xl">$2.39</div>
+                          <div class="font-medium text-lg"> / Student </div>
+                      </li>
+                  </ul>  
+              </div>
+
+              <ul class="py-3 space-y-1 text-gray-500">
+                  <li>Features of Standard Plan</li>
+                  <li>1000+ Students</li>
+                  <li>Verkada Vape Detection</li>
+                  <li>Emergency Mode</li>
+                  <li>Custom Feature Requests</li>
+              </ul>
+              <a href="#" class="block border p-3 rounded-md space-x-1.5 text-center text-purple-900 text-sm">Get Started </a>
+          </div>
+      </div>
+    </div>
+
+    <div class="lg:mt-28 mt-10 mb-7 px-12 border-t pt-7">
+      <div class="flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto lg:space-y-0 space-y-3">
+          <p class="capitalize font-medium"> © Copyright <script>document.write(new Date().getFullYear())</script> <a href="https://muscarasoftware.com">Muscara Software Solutions</a></p>
+          <div class="lg:flex space-x-4 text-gray-700 capitalize hidden">
+              <a href="#"> About</a>
+              <a href="#"> Help</a>
+              <a href="#"> Terms</a>
+              <a href="#"> Privacy</a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/tippy.all.min.js"></script>
+  <script src="/assets/js/uikit.js"></script>
+  <script src="/assets/js/simplebar.js"></script>
+  <script src="/assets/js/custom.js"></script>
+  <script src="/assets/js/bootstrap-select.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+  <script async src="https://analytics.muscarasoftware.com/script.js" data-website-id="6e5c093e-ff46-4d31-86ed-c6595594b574"></script>
+</body>
+    
+</html>
