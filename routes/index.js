@@ -4,13 +4,13 @@ const router = express.Router();
 const google = require('googleapis').google;
 const OAuth2 = google.auth.OAuth2;
 
-const users = require('./user/');
+const api = require('./api');
 const auth = require('./auth/');
 const { getUserEmail } = require('../orm/read/user');
 const { createUser } = require('../orm/create/user');
 
-router.use('/users', users);
 router.use('/login', auth);
+router.use('/api', api);
 
 router.get(`/`, 
   async (req, res) => {
