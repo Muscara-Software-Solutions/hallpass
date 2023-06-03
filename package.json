@@ -27,7 +27,8 @@
     "express-session": "^1.17.3",
     "googleapis": "^118.0.0",
     "memorystore": "^1.6.7",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@prisma/client": "^4.15.0",
