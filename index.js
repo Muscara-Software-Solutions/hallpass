@@ -11,4 +11,4 @@ pluginManager.registerAll();
 app.use('/', router);
 
 // Start server
-app.listen(process.env.PORT || 80, process.env.HOST || '0.0.0.0', () => console.log(`[Hallpass] - Server is live at ${process.env.HOST || '0.0.0.0'}:${process.env.PORT || 80}`));
+app.listen(process.env.PORT || 80, process.env.HOST || '0.0.0.0', () => console.log(`Live`));
