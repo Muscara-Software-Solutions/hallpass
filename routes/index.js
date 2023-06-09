@@ -21,6 +21,31 @@ router.get(`/`,
   }
 );
 
+router.get(`/dashboard`,
+  async(req, res) => {
+    res.render(`dashboard.ejs`, {
+      passes: [
+        {
+          firstName: 'Kevin',
+          lastName: 'Muscara',
+          location: 'Upstairs Bathroom',
+          today: 3,
+          week: 12,
+          semester: 34
+        },
+        {
+          firstName: 'Austin',
+          lastName: 'Smith',
+          location: 'Guidance Office',
+          today: 0,
+          week: 11,
+          semester: 17
+        }
+      ]
+    });
+  }
+);
+
 router.get(`/logout`,
   async(req, res) => {
     if(req.session.userid) {

@@ -1,0 +1,291 @@
+<div class="border-b items-center justify-between mb-4 md:mb-10 py-5 sm:flex">
+  <div class="flex-1">
+      <h1 class="font-medium md:text-xl text-lg flex-1">Active Passes</h1> 
+  </div>
+  <div class="flex items-center space-x-3 md:mt-0 mt-3">
+      <div class="bg-gray-100 border inline-flex p-0.5 rounded-md text-lg fliter-tab" uk-switcher="connect: #course-tabs; animation: uk-animation-fade">
+          <a href="#" style="display: none;" class="py-1.5 px-2.5 rounded-md" data-tippy-placement="top" title="Grid view"> 
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg> 
+          </a>
+          <a href="#" style="display: none;" class="py-1.5 px-2.5 rounded-md" data-tippy-placement="top" title="List view"> 
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+          </a>
+      </div>
+      <a href="create-new-course.html" class="bg-white shadow inline-block px-8 py-1.5 rounded-md text-center">Create</a>
+  </div>
+</div> 
+
+<div class="uk-switcher" id="course-tabs">
+
+  <!-- List view 1 -->
+  <div>
+
+      <div class="space-y-2 md:m-0 -mx-3">
+
+          <!-- item -->
+          <% for(let i = 0; i < passes.length; i++) { %>
+          <div class="bg-white md:flex font-medium items-center p-4 rounded-md shadow-sm hover:shadow-md md:space-x-5 relative">
+
+              <div class="rounded-md overflow-hidden md:relative md:inset-0 absolute top-3 left-2 w-12 h-12 md:h-16 md:w-24 border"> 
+                  <img src="../assets/images/courses/img-5.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+              </div>
+
+              <div class="flex-1 md:m-0 ml-14"> 
+                  <h2 class="font-semibold text-base line-clamp-1"><%= passes[i].firstName %> <%= passes[i].lastName %></h2>
+
+                  <div class="flex space-x-3 items-center md:mt-1.5 text-gray-500 font-medium text-sm">
+                      <span>Class</span>
+                      <div class="sm:block hidden">></div>
+                      <a href="#" class="block"><%= passes[i].location %></a>
+                  </div>
+
+              </div>
+              
+              <div class="flex md:justify-end justify-between md:m-0 mt-2 md:space-x-10 ml-14">
+                  <div>  
+                      <div class="text-sm">Today</div>
+                      <div class="font-medium md:mt-1 md:text-base"><%= passes[i].today %></div>
+                  </div>
+                  <div>   
+                      <div class="text-sm">This week</div>
+                      <div class="font-medium md:mt-1 md:text-base"><%= passes[i].week %></div>
+                  </div>
+                  <div> 
+                      <div class="text-sm">This semester</div>
+                      <div class="font-medium md:mt-1  md:text-base"><%= passes[i].semester %></div>
+                  </div>
+              </div>
+
+          </div>
+          <% } %>
+
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex justify-center mt-9 space-x-2 text-base font-semibold text-gray-400 items-center">
+          <a href="#" class="py-1 px-3 bg-gray-200 rounded text-gray-600"> 1</a>
+          <a href="#" class="py-1 px-2 bg-gray-200 rounded"> 2</a>
+          <a href="#" class="py-1 px-2 bg-gray-200 rounded"> 3</a>
+          <ion-icon name="ellipsis-horizontal" class="text-lg -mb-4 md hydrated" role="img" aria-label="ellipsis horizontal"></ion-icon>
+          <a href="#" class="py-1 px-2 bg-gray-200 rounded"> 12</a>
+      </div>
+
+  </div>
+
+
+  <!-- List view 2  -->
+  <div>
+
+      <div class="space-y-6">
+          
+          <!-- items 1 -->
+          <div class="bg-white shadow rounded-md">
+
+              <div class="flex md:space-x-6 space-x-3 md:p-6 p-2 relative">
+                  <a href="" class="md:w-48 md:h-28 w-28 h-20 overflow-hidden rounded-lg relative shadow-sm">
+                      <img src="../assets/images/courses/img-5.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                  </a>
+                  <div class="flex-1 flex items-start justify-between space-x-4">
+                      <div class="flex-1 min-w-0">
+                          <a href="" class="font-semibold line-clamp-1 mb-2 md:text-lg">  Learn C sharp for Beginners Crash Course </a>
+                          <div class="flex space-x-2 items-center">
+                              <div> Binginner levels  </div>
+                              <div class="md:block hidden">·</div>
+                              <div class="flex items-center"> 18 Hourse </div>
+                          </div>
+                          <div class="grid grid-cols-3 w-full mt-3">
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Enrolled</div>
+                                  <div class="font-semibold text-base"> 1,280</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Updated</div>
+                                  <div class="font-semibold text-base">  1 week ago</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Price</div>
+                                  <div class="font-semibold text-base">  $49</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="flex flex-col space-y-2">
+                          <a href="#" class="bg-blue-600 border inline-block px-8 py-2 rounded-md text-center text-white font-semibold">Edit</a>
+                          <a href="#" class="bg-gray-50 inline-block px-8 py-2 rounded-md text-center text-red-500 font-medium">Delete</a>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <!-- items 2 -->
+          <div class="bg-white shadow rounded-md">
+
+              <div class="flex md:space-x-6 space-x-3 md:p-6 p-2 relative">
+                  <a href="" class="md:w-48 md:h-28 w-28 h-20 overflow-hidden rounded-lg relative shadow-sm">
+                      <img src="../assets/images/courses/img-7.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                  </a>
+                  <div class="flex-1 flex items-start justify-between space-x-4">
+                      <div class="flex-1 min-w-0">
+                          <a href="" class="font-semibold line-clamp-1 mb-2 md:text-lg"> Learn Angular Fundamentals to Expert </a>
+                          <div class="flex space-x-2 items-center">
+                              <div> Binginner levels  </div>
+                              <div class="md:block hidden">·</div>
+                              <div class="flex items-center"> 18 Hourse </div>
+                          </div>
+                          <div class="grid grid-cols-3 w-full mt-3">
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Enrolled</div>
+                                  <div class="font-semibold text-base"> 253</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Updated</div>
+                                  <div class="font-semibold text-base">  19 days ago</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Price</div>
+                                  <div class="font-semibold text-base">  $49</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="flex flex-col space-y-2">
+                          <a href="#" class="bg-blue-600 border inline-block px-8 py-2 rounded-md text-center text-white font-semibold">Edit</a>
+                          <a href="#" class="bg-gray-50 inline-block px-8 py-2 rounded-md text-center text-red-500 font-medium">Delete</a>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <!-- items 3 -->
+          <div class="bg-white shadow rounded-md">
+
+              <div class="flex md:space-x-6 space-x-3 md:p-6 p-2 relative">
+                  <a href="" class="md:w-48 md:h-28 w-28 h-20 overflow-hidden rounded-lg relative shadow-sm">
+                      <img src="../assets/images/courses/img-2.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                  </a>
+                  <div class="flex-1 flex items-start justify-between space-x-4">
+                      <div class="flex-1 min-w-0">
+                          <a href="" class="font-semibold line-clamp-1 mb-2 md:text-lg"> Learn and Understand AngularJS to become a professional  developer</a>
+                          <div class="flex space-x-2 items-center">
+                              <div> Advance levels  </div>
+                              <div class="md:block hidden">·</div>
+                              <div class="flex items-center"> 18 Hourse </div>
+                          </div>
+                          <div class="grid grid-cols-3 w-full mt-3">
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Enrolled</div>
+                                  <div class="font-semibold text-base"> 840</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Updated</div>
+                                  <div class="font-semibold text-base">  18 days ago</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Price</div>
+                                  <div class="font-semibold text-base">  $34</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="flex flex-col space-y-2">
+                          <a href="#" class="bg-blue-600 border inline-block px-8 py-2 rounded-md text-center text-white font-semibold">Edit</a>
+                          <a href="#" class="bg-gray-50 inline-block px-8 py-2 rounded-md text-center text-red-500 font-medium">Delete</a>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <!-- items 4 -->
+          <div class="bg-white shadow rounded-md">
+
+              <div class="flex md:space-x-6 space-x-3 md:p-6 p-2 relative">
+                  <a href="" class="md:w-48 md:h-28 w-28 h-20 overflow-hidden rounded-lg relative shadow-sm">
+                      <img src="../assets/images/courses/img-3.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                  </a>
+                  <div class="flex-1 flex items-start justify-between space-x-4">
+                      <div class="flex-1 min-w-0">
+                          <a href="" class="font-semibold line-clamp-1 mb-2 md:text-lg">  Build Responsive Real World Websites</a>
+                          <div class="flex space-x-2 items-center">
+                              <div> Binginner levels  </div>
+                              <div class="md:block hidden">·</div>
+                              <div class="flex items-center"> 18 Hourse </div>
+                          </div>
+                          <div class="grid grid-cols-3 w-full mt-3">
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Enrolled</div>
+                                  <div class="font-semibold text-base"> 620</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Updated</div>
+                                  <div class="font-semibold text-base">  19 days ago</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Price</div>
+                                  <div class="font-semibold text-base">  $49</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="flex flex-col space-y-2">
+                          <a href="#" class="bg-blue-600 border inline-block px-8 py-2 rounded-md text-center text-white font-semibold">Edit</a>
+                          <a href="#" class="bg-gray-50 inline-block px-8 py-2 rounded-md text-center text-red-500 font-medium">Delete</a>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <!-- items 5 -->
+          <div class="bg-white shadow rounded-md">
+
+              <div class="flex md:space-x-6 space-x-3 md:p-6 p-2 relative">
+                  <a href="" class="md:w-48 md:h-28 w-28 h-20 overflow-hidden rounded-lg relative shadow-sm">
+                      <img src="../assets/images/courses/img-1.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                  </a>
+                  <div class="flex-1 flex items-start justify-between space-x-4">
+                      <div class="flex-1 min-w-0">
+                          <a href="" class="font-semibold line-clamp-1 mb-2 md:text-lg">The Complete JavaScript For Beginners </a>
+                          <div class="flex space-x-2 items-center">
+                              <div> Intermediate levels  </div>
+                              <div class="md:block hidden">·</div>
+                              <div class="flex items-center"> 18 Hourse </div>
+                          </div>
+                          <div class="grid grid-cols-3 w-full mt-3">
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Enrolled</div>
+                                  <div class="font-semibold text-base"> 1,680</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Updated</div>
+                                  <div class="font-semibold text-base">  29 days ago</div>
+                              </div>
+                              <div class="space-y-0.5"> 
+                                  <div class="text-gray-500"> Price</div>
+                                  <div class="font-semibold text-base">  $56</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="flex flex-col space-y-2">
+                          <a href="#" class="bg-blue-600 border inline-block px-8 py-2 rounded-md text-center text-white font-semibold">Edit</a>
+                          <a href="#" class="bg-gray-50 inline-block px-8 py-2 rounded-md text-center text-red-500 font-medium">Delete</a>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex justify-center mt-9 space-x-2 text-base font-semibold text-gray-400 items-center">
+          <a href="#" class="py-1 px-3 bg-gray-200 rounded text-gray-600"> 1</a>
+          <a href="#" class="py-1 px-2 bg-gray-200 rounded"> 2</a>
+          <a href="#" class="py-1 px-2 bg-gray-200 rounded"> 3</a>
+          <ion-icon name="ellipsis-horizontal" class="text-lg -mb-4 md hydrated" role="img" aria-label="ellipsis horizontal"></ion-icon>
+          <a href="#" class="py-1 px-2 bg-gray-200 rounded"> 12</a>
+      </div>
+
+  </div>
+
+</div>

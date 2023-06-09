@@ -1,0 +1,43 @@
+<div class="items-center justify-between mb-4 md:mb-7 py-5 sm:flex">
+  <div class="flex-1">
+      <h1 class="font-medium md:text-3xl text-xl flex-1">Passes</h1> 
+  </div>
+  <div class="flex items-center space-x-3">
+      
+      <div class="bg-white border flex items-center overflow-hidden relative rounded-lg">
+          <i class="pl-4 -mr-2 relative uil-search"></i>
+          <input class="flex-1 max-h-9" placeholder="Search" type="text">
+      </div>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-4 grid-cols-2 gap-5 mb-4"  uk-scrollspy="target: > div; cls: uk-animation-scale-up; delay: 50">
+  <div class="bg-white flex p-4 rounded-md shadow sm:p-5 border-t-4 border-green-500">
+      <div class="flex-1 min-w-0">
+          <div class="text-sm"> Total Passes </div>
+          <div class="font-semibold md:text-2xl text-xl mt-3"> 30</div> 
+      </div>
+      <ion-icon name="checkmark-circle" class="text-3xl text-green-500"></ion-icon>
+  </div>
+  <div class="bg-white flex p-4 rounded-md shadow sm:p-5 border-t-4 border-yellow-500">
+      <div class="flex-1 min-w-0">
+          <div class="text-sm"> Active Passes</div>
+          <div class="font-semibold md:text-2xl text-xl mt-3"><%= passes.length %></div> 
+      </div>
+      <ion-icon name="bookmark" class="text-3xl text-yellow-500"></ion-icon>
+  </div>
+  <div class="bg-white flex p-4 rounded-md shadow sm:p-5 border-t-4 border-blue-500">
+      <div class="flex-1 min-w-0">
+          <div class="text-sm">Vape Detections</div>
+          <div class="font-semibold md:text-2xl text-xl mt-3">0</div> 
+      </div>
+      <ion-icon name="logo-no-smoking" class="text-3xl text-blue-500"></ion-icon>
+  </div>
+  <div class="bg-white flex p-4 rounded-md shadow sm:p-5 border-t-4 border-red-500">
+      <div class="flex-1 min-w-0">
+          <div class="text-sm"> Blacklists </div>
+          <div class="font-semibold md:text-2xl text-xl mt-3">2</div> 
+      </div>
+      <ion-icon name="stop" class="text-3xl text-red-500"></ion-icon>
+  </div>
+</div> 
