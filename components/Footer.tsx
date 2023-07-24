@@ -15,9 +15,8 @@ export default function Footer({ children }: Props) {
     {
       title: "Legal",
       children: [
-        { name: "Terms", href: "/tos" },
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "License", href: "/license" }
+        { name: "Terms", href: "https://www.termsofusegenerator.net/live.php?token=dbiuEKtHw1UAka4n1BMRLuAV30stQBCC" },
+        { name: "Privacy Policy", href: "https://www.freeprivacypolicy.com/live/60ca5d59-73f7-4425-8422-7e12c73c3bc7" },
       ]
     },
     {
