@@ -9,6 +9,10 @@ export default function Home() {
     <>
       <Head>
         <title>Hallpass</title>
+        <meta 
+          name="description"
+          content="The all-in-one hallway management software built for the future. Built by educators, for educators."
+        />
       </Head>
       <Header active="true" />
       <Hero />
