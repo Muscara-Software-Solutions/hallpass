@@ -5,7 +5,7 @@ export default function Hero() {
       style="background-image:linear-gradient(rgba(0, 0, 40, 0.8),rgba(0, 0, 40, 0.8)), url('https://cdna.artstation.com/p/assets/images/images/026/970/116/medium/denis-shumoi-mebg6-1.jpg?1590232037');"
     >
       <div class="space-y-4 text-center">
-        <h1 class="text-4xl inline-block font-bold">Hallpass</h1>
+        <h1 class="text-4xl inline-block font-bold text-blue-300">Hallpass</h1>
         <p class="text-xl max-w-lg text-blue-100">The future of hallway management, built by educators, for educators.</p>
       </div>
 
