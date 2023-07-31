@@ -9,7 +9,6 @@ export default function Footer({ children }: Props) {
       title: "Resources",
       children: [
         { name: "Blog", href: "https://blog.hallpass.gg" },
-        { name: "Developers", href: "/docs" }
       ],
     },
     {
@@ -23,15 +22,11 @@ export default function Footer({ children }: Props) {
       title: "Support",
       children: [
         { name: "Email", href: "mailto:support@hallpass.gg" },
-        { name: "Bugs", href: "/bugs" },
-        { name: "Ideas", href: "/ideas" },
-        { name: "Uptime", href: "/uptime" }
       ]
     },
     {
       title: "Social",
       children: [
-        { name: "Email", href: "mailto:support@hallpass.gg" },
         { name: "GitHub", href: "https://github.com/muscara-software-solutions" },
         { name: "Twitter", href: "https://twitter.com/muscarasoftware" },
         { name: "LinkedIn", href: "https://linkedin.com/company/muscara-software-solutions" }

@@ -10,8 +10,8 @@ export default function Hero() {
       </div>
 
       <div class="flex flex-col md:flex-row items-center">
-        <a href="mailto:support@hallpass.gg" class="block mt-4 text-blue-600 cursor-pointer inline-flex items-center group text-blue-800 bg-white px-8 py-2 rounded-md hover:bg-blue-50 font-bold">
-          Join Today{""}
+        <a href="https://calendly.com/hallpassdotgg/demo" class="block mt-4 text-blue-600 cursor-pointer inline-flex items-center group text-blue-800 bg-white px-8 py-2 rounded-md hover:bg-blue-50 font-bold">
+          Free Demo{""}
         </a>
       </div>
     </div>
