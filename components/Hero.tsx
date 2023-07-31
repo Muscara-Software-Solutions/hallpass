@@ -6,7 +6,7 @@ export default function Hero() {
     >
       <div class="space-y-4 text-center">
         <h1 class="text-4xl inline-block font-bold text-blue-300">Hallpass</h1>
-        <p class="text-xl max-w-lg text-blue-100">The future of hallway management, built by educators, for educators.</p>
+        <p class="text-xl max-w-lg text-blue-100">The ultimate way to streamline hallway management.</p>
       </div>
 
       <div class="flex flex-col md:flex-row items-center">

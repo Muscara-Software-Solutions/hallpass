@@ -7,17 +7,17 @@ export default function Features() {
   const featureItems = [
     {
       icon: IconAlarm,
-      description: "Control your students with daily, semester, yearly, and location based pass limits.",
+      description: "Take control of your hallway traffic with daily, semester, yearly, and period based pass limits.",
       link: "https://blog.hallpass.gg/proper-restrictions",
     },
     {
       icon: IconDesktop,
-      description: "Complete integration with existing Student Information Systems like Infinite Campus or Google IAM.",
+      description: "Seamlessly integrate with your existing Student Information System.",
       link: "https://blog.hallpass.gg/seamless-integration"
     },
     {
       icon: IconAlert,
-      description: "Built in Verkada Vape Detection and custom blacklists preventing two or more students from leaving at the same time.",
+      description: "Increased safety with custom blacklists and real-time alerts & monitoring.",
       link: "https://blog.hallpass.gg/increased-security",
     },
   ];
