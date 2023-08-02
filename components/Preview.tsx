@@ -18,7 +18,7 @@ export default function Preview() {
           <div class="lg:pr-4">
             <div class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               <p>
-                Hallpass is specifically designed to integrate into your instituitions daily workflow, ensuring a smooth and efficient implementation. With its user-friendly interface and intuitive features, Hallpass eliminates any learning curves.
+                Hallpass is specifically designed to integrate into your institutions daily workflow, ensuring a smooth and efficient implementation. With its user-friendly interface and intuitive features, Hallpass eliminates any learning curves.
               </p>
               <ul role="list" class="mt-8 space-y-8 text-gray-600">
                 <li class="flex gap-x-3">
