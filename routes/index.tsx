@@ -1,23 +1,25 @@
 import { Head } from "$fresh/runtime.ts";
-import Header from "../components/Header.tsx";
-import Footer from "../components/Footer.tsx";
 import Features from "../components/Features.tsx";
-import Hero from "../components/Hero.tsx";
+import Footer from "../components/Footer.tsx";
+import Header from "../components/Header.tsx";
+import Preview from "../components/Preview.tsx";
+import Pricing from "../components/Pricing.tsx";
+import Quote from "../components/Quote.tsx";
 
 export default function Home() {
   return (
-    <>
+    <html class="h-full bg-gray-100">
       <Head>
         <title>Hallpass</title>
-        <meta 
-          name="description"
-          content="The all-in-one hallway management software built for the future. Built by educators, for educators."
-        />
       </Head>
-      <Header active="true" />
-      <Hero />
-      <Features />
-      <Footer children="" />
-    </>
+      <body class="h-full">
+        <Header active="true" />
+        <Preview />
+        <Features />
+        <Quote />
+        <Pricing />
+        <Footer children="" />
+      </body>
+    </html>
   );
 }

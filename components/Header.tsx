@@ -4,8 +4,8 @@ type Props = {
 
 export default function Header({ active }: Props) {
   const menus = [
-    { name: "Blog", href: "https://blog.hallpass.gg" },
-    { name: "Contact", href: "mailto:support@hallpass.gg" },
+    { name: "Free Demo", href: "https://calendly.com/hallpassdotgg/demo" },
+    { name: "Support", href: "mailto:support@hallpass.gg" },
     { name: "Dashboard", href: "https://app.hallpass.gg/" },
   ];
 
@@ -13,7 +13,6 @@ export default function Header({ active }: Props) {
     <div class="bg-white w-full py-6 px-8 flex flex-col md:flex-row gap-4">
       <div class="flex items-center flex-1">
         <div class="text-2xl ml-1 font-bold">
-          Hallpass
         </div>
       </div>
       <ul class="flex items-center gap-6">

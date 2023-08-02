@@ -12,26 +12,25 @@ export default function Footer({ children }: Props) {
       ],
     },
     {
+      title: "Social",
+      children: [
+        { name: "LinkedIn", href: "https://linkedin.com/company/muscara-software-solutions" }
+      ]
+    },
+    {
+      title: "Contact",
+      children: [
+        { name: "Billing", href: "mailto:billing@hallpass.gg" },
+        { name: "Support", href: "mailto:support@hallpass.gg" }
+      ]
+    },
+    {
       title: "Legal",
       children: [
         { name: "Terms", href: "https://www.termsofusegenerator.net/live.php?token=dbiuEKtHw1UAka4n1BMRLuAV30stQBCC" },
         { name: "Privacy Policy", href: "https://www.freeprivacypolicy.com/live/60ca5d59-73f7-4425-8422-7e12c73c3bc7" },
       ]
-    },
-    {
-      title: "Support",
-      children: [
-        { name: "Email", href: "mailto:support@hallpass.gg" },
-      ]
-    },
-    {
-      title: "Social",
-      children: [
-        { name: "GitHub", href: "https://github.com/muscara-software-solutions" },
-        { name: "Twitter", href: "https://twitter.com/muscarasoftware" },
-        { name: "LinkedIn", href: "https://linkedin.com/company/muscara-software-solutions" }
-      ]
-    },
+    }
   ];
 
   return (
