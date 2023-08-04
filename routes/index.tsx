@@ -11,6 +11,14 @@ export default function Home() {
     <html class="h-full bg-gray-100">
       <Head>
         <title>Hallpass</title>
+        <link rel="icon" href="/favicon.png" />
+        <meta name="name" itemProp="name" content="Hallpass" />
+        <meta name="description" content="Streamline your hallway management, use Hallpass to ditch the paper and clipboard signout sheets." />
+        <meta name="google" content="notranslate" />
+        <meta name="author" content="Muscara Software Solutions, LLC" />
+        <meta name="keywords" content="hallway, hallway management, hallpass, digital hallpass, smartpass, smart pass" />
+        <meta name="reply-to" content="support@hallpass.gg" />
+        <meta name="email" content="support@hallpass.gg" />
       </Head>
       <body class="h-full">
         {/* <Preview /> */}
