@@ -37,6 +37,7 @@ export default function Footer({ children }: Props) {
     <div class="bg-white flex flex-col md:flex-row w-full gap-8 md:gap-16 px-8 py-8 text-sm">
       <div class="flex-1">
         <div class="flex items-center gap-1">
+          <img class="h-8 w-auto inline-block" src="/favicon.png" alt="" />  
           <div class="font-bold text-2xl">
             Hallpass
           </div>

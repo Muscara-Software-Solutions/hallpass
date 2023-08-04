@@ -12,8 +12,15 @@ export default function Preview() {
           </div>
         </div>
         <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-          <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="/screenshot.png" alt="" />
+          <video autoPlay src="/preview.mov" class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]">
+            <source src="/preview.mov" type="video/mov" />
+          </video>
         </div>
+
+        {/* <div class="-ml-4 -mt-4 p-12 lg:sticky lg:top-2 lg:col-start-2 lg:row-span-2 lg:row-start-2 lg:overflow-hidden">
+          <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="/screenshot.png" alt="" />
+        </div> */}
+
         <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div class="lg:pr-4">
             <div class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
@@ -36,8 +43,6 @@ export default function Preview() {
               </ul>
               <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">No server? No problem.</h2>
               <p class="mt-6">Hallpass is a cloud hosted service, allowing you to focus on whats most important while we handle the rest.</p>
-              <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Free Demo</h2>
-              <p class="mt-8">We offer <span class="text-green-600">FREE</span> demos so you can see if Hallpass is a good fit for you. <a class="text-blue-600" href="https://calendly.com/hallpassdotgg/demo">Click here</a> to schedule yours today.</p>
             </div>
           </div>
         </div>
