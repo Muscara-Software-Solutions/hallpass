@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="description" content="Streamline your hallway management, use Hallpass to ditch the paper and clipboard signout sheets." />
         <meta name="google" content="notranslate" />
         <meta name="author" content="Muscara Software Solutions, LLC" />
-        <meta name="keywords" content="hallway, hallway management, hallpass, digital hallpass, smartpass, smart pass" />
+        <meta name="keywords" content="what is a hallpass, hallpass meaning, hallpass clever, hallpass app, smartpass app, e-Hall, e-Hall pass, hallway, hallway management, hallway management software, e-hallpass, epass, e hallpass, ehallpass, hallpass, digital hallpass, smartpass, smart pass, student bathroom tracker, student vape detector, securly hallpass, securly ehallpass, securely e-hallpass, securly e hallpass, securly" />
         <meta name="reply-to" content="support@hallpass.gg" />
         <meta name="email" content="support@hallpass.gg" />
 
