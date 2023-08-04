@@ -19,6 +19,13 @@ export default function Home() {
         <meta name="keywords" content="hallway, hallway management, hallpass, digital hallpass, smartpass, smart pass" />
         <meta name="reply-to" content="support@hallpass.gg" />
         <meta name="email" content="support@hallpass.gg" />
+
+        <meta property="og:site_name" content="Hallpass" />
+        <meta property="og:url" content="https://hallpass.gg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hallpass" />
+        <meta property="og:image" content="https://hallpass.gg/favicon.png" />
+        <meta property="og:description" content="Streamline your hallway management, use Hallpass to ditch the paper and clipboard signout sheets." />
       </Head>
       <body class="h-full">
         {/* <Preview /> */}
