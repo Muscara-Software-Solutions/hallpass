@@ -24,7 +24,7 @@ export default function Home() {
         <meta property="og:url" content="https://hallpass.gg" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Hallpass" />
-        <meta property="og:image" content="https://hallpass.gg/favicon.png" />
+        <meta property="og:image" content="https://hallpass.gg/seo.png" />
         <meta property="og:description" content="Streamline your hallway management, use Hallpass to ditch the paper and clipboard signout sheets." />
       </Head>
       <body class="h-full">
