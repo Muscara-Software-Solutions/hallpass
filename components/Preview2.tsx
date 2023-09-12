@@ -31,7 +31,7 @@ export default function Preview2() {
               <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Streamline your hallway management.</h1>
               <p class="mt-6 text-lg leading-8 text-gray-600">Ditch the paper and clipboard, start using a more comprehensive approach to managing your school hallway safety.</p>
               <div class="mt-10 flex items-center justify-center gap-x-6">
-                <a href="https://calendly.com/hallpassdotgg/demo" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Free Demo</a>
+                <a href="https://forms.gle/R9BVGMNy4NcuuTBA9" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Onboard Today</a>
                 <a href="#features" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
               </div>
             </div>
